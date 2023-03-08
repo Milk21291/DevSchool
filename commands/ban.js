@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
-module.exports = {
+const ban = module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ban')
 		.setDescription('Selecione um membro para bani-lo.')
@@ -15,4 +15,13 @@ module.exports = {
 				.setDescription('O motivo da proibição'))
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.setDMPermission(false),
-};
+
+		async execute(interaction) {
+			const target = interaction.options.getUser('membro');
+			const reason = interaction.options.getString('motivo') ?? 'Nenhum motivo fornecido';
+	
+			await interaction.reply(`Banido ${target.username} por motivo: ${reason}`);
+			await interaction.guild.members.ban(target);
+		},
+	};
+	
