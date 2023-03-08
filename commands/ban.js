@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
-const ban = module.exports = {
+module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ban')
 		.setDescription('Selecione um membro para bani-lo.')
@@ -23,5 +23,6 @@ const ban = module.exports = {
 			await interaction.reply(`Banido ${target.username} por motivo: ${reason}`);
 			await interaction.guild.members.ban(target);
 		},
+
 	};
 	
