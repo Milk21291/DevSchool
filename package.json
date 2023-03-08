@@ -12,5 +12,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "bot discord"
+  "description": "bot discord",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Milk21291/DevSchool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Milk21291/DevSchool/issues"
+  },
+  "homepage": "https://github.com/Milk21291/DevSchool#readme"
 }
